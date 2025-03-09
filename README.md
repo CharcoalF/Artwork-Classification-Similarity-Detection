@@ -8,6 +8,8 @@
 
 - The designed model used deep learning techniques, specifically Convolutional Neural Networks (CNNs) and LSTM (Long Short-Term Memory) layers.
 
+[![视频标题](Screenshot.png)](https://www.youtube.com/watch?v=你的视频ID)
+
 ### Data Source
 
 - Given the whole [ArtGAN](https://github.com/cs-chan/ArtGAN/blob/master/WikiArt%20Dataset/README.md) with size of 25.4Gb. This repository contains only sample data. However, the model is run in local environment with full dataset.
@@ -67,7 +69,7 @@ The main libraries used are:
 
 - Once the model is trained, used it to make predictions on new images or evaluate its performance on the validation set.
 
-### 7. Evaluating the Model
+#### 7. Evaluating the Model
 
 - To assess the performance of the model, used metrics like **accuracy** and **loss**, **confusion matrices**.
 
