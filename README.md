@@ -8,7 +8,7 @@
 
 - The designed model used deep learning techniques, specifically Convolutional Neural Networks (CNNs) and LSTM (Long Short-Term Memory) layers.
 
-[![视频标题](Screenshot.png)](https://www.youtube.com/watch?v=你的视频ID)
+[<img src="Screenshot.png" width="400" />](https://youtu.be/V0PKSvwiHs4)
 
 ### Data Source
 
