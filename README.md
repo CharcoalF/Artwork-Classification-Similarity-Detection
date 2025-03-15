@@ -128,7 +128,7 @@ f1 = f1_score(y_true, y_pred)
 
 Here’s an example of finding **the top 5 most similar paintings** to a given artwork:
 
-<img src="img/OutputTask2.png" width="600" />
+<img src="img/outputTask2.png" width="600" />
 
 ---
 
