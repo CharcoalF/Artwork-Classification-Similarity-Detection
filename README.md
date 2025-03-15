@@ -76,15 +76,15 @@ This task focuses on finding **similar paintings** using deep learning-based **f
 🎨 **Image Preprocess**  
 | Target Image | Preprocess |
 |-------------|-------|
-| ![Query](img/OriginalTask2.png) | ![1](img/PreprocessTask2.png) |
+| <img src="img/OriginalTask2.png" width="150">| <img src="img/PreprocessTask2.png" width="200" />|
 
 😊 **Face Features** (FaceNet + MTCNN)  
 | Target Image | Face Detection |
 |-------------|-------|
-| ![Query](img/OriginalTask2.png) | ![1](img/FaceDetectionTask2.png) |
+| <img src="img/OriginalTask2.png" width="150">| <img src="img/FaceDetectionTask2.png" width="150" />|
 
 🎨 **Image Features** (ResNet)  
-[<img src="img/Conv1Task2.png" width="600" />]()
+[<img src="img/Conv1Task2.png" width="300" />]()
 
 🕺 **Pose Features** (MediaPipe Pose)
 
@@ -126,8 +126,9 @@ f1 = f1_score(y_true, y_pred)
 
 ## **📸 Example Results**
 
-Here’s an example of finding **the top 5 most similar paintings** to a given artwork:  
-[<img src="img/OutputTask2.png" width="600" />]()
+Here’s an example of finding **the top 5 most similar paintings** to a given artwork:
+
+<img src="img/OutputTask2.png" width="600" />
 
 ---
 
