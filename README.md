@@ -100,7 +100,7 @@ This task focuses on finding **similar paintings** using deep learning-based **f
 
 ### **📂 Dataset**
 
-Paintings from the **[National Gallery of Art open dataset](https://github.com/NationalGalleryOfArt/opendata)**. Images are resized to **224×224** for deep learning models.
+Paintings from the **[National Gallery of Art open dataset](https://github.com/NationalGalleryOfArt/opendata)**. Images are downloaded from **[wikimedia](<https://commons.wikimedia.org/wiki/Category:Drawings_in_the_National_Gallery_of_Art_(Washington,_D.C.)>)** resized to **224×224** for deep learning models.
 
 ---
 
@@ -134,7 +134,9 @@ Here’s an example of finding **the top 5 most similar paintings** to a given a
 
 ## **📢 References**
 
-If you find this project helpful, check out the original ArtGAN paper:
+```
+[National Gallery of Art open dataset](https://github.com/NationalGalleryOfArt/opendata)
+```
 
 ```
 @article{artgan2018,
