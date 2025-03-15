@@ -1,71 +1,139 @@
-# Image Classification Project
+# **Image Classification & Artwork Similarity Detection**
 
-## Task 1: Convolutional-Recurrent Architectures
+This project is divided into two main tasks:
 
-### Overview
+1. **Image Classification** – Using CNNs and LSTMs to classify artworks based on attributes like **style, artist, and genre**.
+2. **Artwork Similarity Detection** – Using deep learning to find **visually similar paintings** based on extracted features.
 
-- Task 1 aims to classify images from the [ArtGAN](https://github.com/cs-chan/ArtGAN/blob/master/WikiArt%20Dataset/README.md) based on Style, Artist, Genre, and other attributes.
+## **Task 1: Image Classification with Convolutional-Recurrent Networks**
 
-- The designed model used deep learning techniques, specifically Convolutional Neural Networks (CNNs) and LSTM (Long Short-Term Memory) layers.
-- Explanation video as below:
+### **Overview**
 
-  [<img src="Screenshot.png" width="400" />](https://youtu.be/V0PKSvwiHs4)
+The goal of this task is to classify images from the [ArtGAN dataset](https://github.com/cs-chan/ArtGAN/blob/master/WikiArt%20Dataset/README.md) based on **style, artist, and genre**. To achieve this, used a combination of **Convolutional Neural Networks (CNNs)** for feature extraction and **LSTM (Long Short-Term Memory) layers** to handle sequential patterns.
 
-### Data Source
+🔹 **Model Architecture:** CNN + LSTM  
+🔹 **Dataset:** ArtGAN WikiArt dataset (25.4GB)  
+🔹 **Example Task:** Style Classification
 
-- Given the whole [ArtGAN](https://github.com/cs-chan/ArtGAN/blob/master/WikiArt%20Dataset/README.md) with size of 25.4Gb. This repository contains only sample data. However, the model is run in local environment with full dataset.
+**📺 Explanation Video:**  
+[<img src="img/Screenshot.png" width="400" />](https://youtu.be/V0PKSvwiHs4)
 
-- Use Style classification group as an example
+---
 
-  --> **Style_train.csv**: Contains paths to training images and their corresponding style labels.
+### **📂 Dataset**
 
-  --> **Style_val.csv**: Contains paths to validation images and their corresponding labels.
+The full dataset is **too large** for this repository, but here provides sample data to work with. The original dataset includes paintings labeled by **style, artist, and genre**.
 
-- Each CSV file has two columns:
-  --> **image_path**: The location of the image file.
-  --> **class_index**: The numerical label for the style of the image.
+- **Style_train.csv** – Training data with image paths & style labels
+- **Style_val.csv** – Validation data with image paths & labels
 
-### Installation
+Each CSV file contains:
 
-Before running the code, you'll need to install the necessary Python libraries.
+- **image_path** – Path to the image
+- **class_index** – Numerical label for the style
+
+---
+
+### **⚙️ Installation**
+
+Before running the code, install the required dependencies:
 
 ```bash
 pip install tensorflow numpy pandas opencv-python scikit-learn matplotlib
 ```
 
-The main libraries used are:
+📦 **Key Libraries:**  
+✅ **TensorFlow/Keras** – Model training  
+✅ **NumPy/Pandas** – Data handling  
+✅ **OpenCV** – Image processing  
+✅ **Matplotlib** – Visualization  
+✅ **Scikit-learn** – Data preprocessing
 
-- **TensorFlow** (for building and training the model)
-- **Keras** (for high-level neural network tasks)
-- **Numpy** (for numerical operations)
-- **Pandas** (for handling and processing data)
-- **OpenCV** (for image processing)
-- **Matplotlib** (for visualizations)
-- **Scikit-learn** (for data preprocessing and utilities)
+---
 
-### How task 1 is performed
+### **🚀 How the Model Works**
 
-1. **Load and Prepare the Data**: Load the CSV files that contain the image paths and labels. Preprocess the images, resizing them to the desired shape and normalizing the pixel values to a range between 0 and 1.
+1️⃣ **Load & Preprocess Data** – Images are resized and normalized.  
+2️⃣ **Build the Model** – CNNs extract features; LSTMs process sequential patterns.  
+3️⃣ **Data Generator** – A custom **ImageLabelGenerator** handles large datasets efficiently.  
+4️⃣ **Train the Model** – Uses **fit()** with training data, batch size, and epochs.  
+5️⃣ **Extract Features** – Intermediate features (e.g., `conv2d_3`) can be used for further analysis.  
+6️⃣ **Make Predictions** – The trained model predicts artwork styles.  
+7️⃣ **Evaluate Performance** – Metrics like **accuracy, loss, and confusion matrices** are used.
 
-2. **Build the Model**: Use a combination of **CNNs** for extracting features from the images and **LSTM layers** for processing the sequential information in the data.
+| Misclassification 1       | Misclassification 2   | Misclassification 3   |
+| ------------------------- | --------------------- | --------------------- |
+| ![Query](img/output1.png) | ![1](img/output2.png) | ![2](img/output3.png) |
 
-3. **Data Generator**: Since the task is working with large datasets, a custom **ImageLabelGenerator** is created.
+---
 
-4. **Extract Features**: After training the model, extract features from intermediate layers (such as `conv2d_3`) to analyze how the model is learning or to use these features in other tasks (like clustering or further analysis).
+## **Task 2: Artwork Similarity Detection**
 
-5. **Train the Model**: Train the model using the **fit** method, providing the training data generator and setting parameters like batch size and number of epochs.
+### **Overview**
 
-6. **Make Predictions**: Once the model is trained, used it to make predictions on new images or evaluate its performance on the validation set.
+This task focuses on finding **similar paintings** using deep learning-based **feature extraction** and similarity metrics.
 
-7. **Evaluating the Model**: To assess the performance of the model, used metrics like **accuracy** and **loss**, **confusion matrices**.
+🎨 **Image Preprocess**  
+| Target Image | Preprocess |
+|-------------|-------|
+| ![Query](img/OriginalTask2.png) | ![1](img/PreprocessTask2.png) |
 
-## Task 2: Similarity
+😊 **Face Features** (FaceNet + MTCNN)  
+| Target Image | Face Detection |
+|-------------|-------|
+| ![Query](img/OriginalTask2.png) | ![1](img/FaceDetectionTask2.png) |
 
-### Overview
+🎨 **Image Features** (ResNet)  
+[<img src="img/Conv1Task2.png" width="600" />]()
 
-Task 2 aims to classify images from the [National Gallery Of Art open data set](https://github.com/NationalGalleryOfArt/opendata) based on similarity.
+🕺 **Pose Features** (MediaPipe Pose)
 
-## Reference:
+🔹 **Similarity Metrics:**
+
+- **Cosine Similarity** (for image & face features)
+- **Euclidean Distance** (for pose features)
+- **Weighted Similarity Score**
+
+🔹 **Goal:** Given a painting, find **top-K similar artworks**
+
+---
+
+### **📂 Dataset**
+
+Paintings from the **[National Gallery of Art open dataset](https://github.com/NationalGalleryOfArt/opendata)**. Images are resized to **224×224** for deep learning models.
+
+---
+
+### **⚙️ Installation & Setup**
+
+```bash
+pip install torch torchvision facenet-pytorch mediapipe opencv-python numpy matplotlib scipy
+```
+
+---
+
+### **📊 Evaluation Metrics**
+
+Face detection shall be evaluated using **Precision, Recall, and F1-score**. However, as no ground truth data provided, the model does not do this comparing.
+
+```python
+precision = precision_score(y_true, y_pred)
+recall = recall_score(y_true, y_pred)
+f1 = f1_score(y_true, y_pred)
+```
+
+---
+
+## **📸 Example Results**
+
+Here’s an example of finding **the top 5 most similar paintings** to a given artwork:  
+[<img src="img/OutputTask2.png" width="600" />]()
+
+---
+
+## **📢 References**
+
+If you find this project helpful, check out the original ArtGAN paper:
 
 ```
 @article{artgan2018,
