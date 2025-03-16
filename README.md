@@ -1,15 +1,15 @@
-# **Image Classification & Artwork Similarity Detection**
+# **Artwork Classification & Similarity Detection**
 
 This project is divided into two main tasks:
 
-1. **Image Classification** – Using CNNs and LSTMs to classify artworks based on attributes like **style, artist, and genre**.
+1. **Artwork Classification** – Using CNNs and LSTMs to classify artworks based on attributes like **style, artist, and genre**.
 2. **Artwork Similarity Detection** – Using deep learning to find **visually similar paintings** based on extracted features.
 
-## **Task 1: Image Classification with Convolutional-Recurrent Networks**
+## **Task 1: Artwork Classification with Convolutional-Recurrent Networks**
 
 ### **Overview**
 
-The goal of this task is to classify images from the [ArtGAN dataset](https://github.com/cs-chan/ArtGAN/blob/master/WikiArt%20Dataset/README.md) based on **style, artist, and genre**. To achieve this, used a combination of **Convolutional Neural Networks (CNNs)** for feature extraction and **LSTM (Long Short-Term Memory) layers** to handle sequential patterns.
+Classify images from the [ArtGAN dataset](https://github.com/cs-chan/ArtGAN/blob/master/WikiArt%20Dataset/README.md) based on **style, artist, and genre**. To achieve this, used a combination of **Convolutional Neural Networks (CNNs)** for feature extraction and **LSTM (Long Short-Term Memory) layers** to handle sequential patterns.
 
 🔹 **Model Architecture:** CNN + LSTM  
 🔹 **Dataset:** ArtGAN WikiArt dataset (25.4GB)  
@@ -22,7 +22,7 @@ The goal of this task is to classify images from the [ArtGAN dataset](https://gi
 
 ### **📂 Dataset**
 
-The full dataset is **too large** for this repository, but here provides sample data to work with. The original dataset includes paintings labeled by **style, artist, and genre**.
+The full dataset is **too large** for this repository, but here provides sample data to work with.
 
 - **Style_train.csv** – Training data with image paths & style labels
 - **Style_val.csv** – Validation data with image paths & labels
@@ -36,18 +36,9 @@ Each CSV file contains:
 
 ### **⚙️ Installation**
 
-Before running the code, install the required dependencies:
-
 ```bash
 pip install tensorflow numpy pandas opencv-python scikit-learn matplotlib
 ```
-
-📦 **Key Libraries:**  
-✅ **TensorFlow/Keras** – Model training  
-✅ **NumPy/Pandas** – Data handling  
-✅ **OpenCV** – Image processing  
-✅ **Matplotlib** – Visualization  
-✅ **Scikit-learn** – Data preprocessing
 
 ---
 
@@ -72,6 +63,9 @@ pip install tensorflow numpy pandas opencv-python scikit-learn matplotlib
 ### **Overview**
 
 This task focuses on finding **similar paintings** using deep learning-based **feature extraction** and similarity metrics.
+
+**📺 Explanation Video:**  
+[<img src="img/Screenshot2.png" width="400" />](https://youtu.be/UhhBYAxl3tQ)
 
 🎨 **Image Preprocess**  
 | Target Image | Preprocess |
@@ -104,7 +98,7 @@ Paintings from the **[National Gallery of Art open dataset](https://github.com/N
 
 ---
 
-### **⚙️ Installation & Setup**
+### **⚙️ Installation**
 
 ```bash
 pip install torch torchvision facenet-pytorch mediapipe opencv-python numpy matplotlib scipy
@@ -115,12 +109,6 @@ pip install torch torchvision facenet-pytorch mediapipe opencv-python numpy matp
 ### **📊 Evaluation Metrics**
 
 Face detection shall be evaluated using **Precision, Recall, and F1-score**. However, as no ground truth data provided, the model does not do this comparing.
-
-```python
-precision = precision_score(y_true, y_pred)
-recall = recall_score(y_true, y_pred)
-f1 = f1_score(y_true, y_pred)
-```
 
 ---
 
