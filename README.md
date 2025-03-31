@@ -15,7 +15,7 @@ Classify images from the [ArtGAN dataset](https://github.com/cs-chan/ArtGAN/blob
 🔹 **Dataset:** ArtGAN WikiArt dataset (25.4GB)  
 🔹 **Example Task:** Style Classification
 
-**📺 Explanation Video:**  
+### **📺 Explanation Video:**  
 [<img src="img/Screenshot.png" width="400" />](https://youtu.be/V0PKSvwiHs4)
 
 ---
@@ -64,7 +64,7 @@ pip install tensorflow numpy pandas opencv-python scikit-learn matplotlib
 
 This task focuses on finding **similar paintings** using deep learning-based **feature extraction** and similarity metrics.
 
-**📺 Explanation Video:**  
+### **📺 Explanation Video:**  
 [<img src="img/Screenshot2.png" width="400" />](https://youtu.be/UhhBYAxl3tQ)
 
 🎨 **Image Preprocess**  
